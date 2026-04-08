@@ -1,0 +1,20 @@
+<h2>Mentorship Eligibility Check</h2>
+
+<form method="POST">
+  <label for="course_code">Course Code:</label>
+  <input type="text" id="course_code" name="course_code" placeholder="CP317" required>
+  <button type="submit">Check</button>
+</form>
+
+{% if result %}
+  <p>{{ result }}</p>
+{% endif %}
+
+{% if eligible %}
+<form method="POST" action="/mentor/apply">
+  <button type="submit">Apply for Mentorship</button>
+</form>
+{% endif %}
+
+<p><a href="/dashboard">Back to Dashboard</a></p>
+
